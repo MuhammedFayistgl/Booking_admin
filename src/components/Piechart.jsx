@@ -6,7 +6,7 @@ import {data} from '../Data/piechaerData'
 
 const Piechart = () => {
   return (
-    <div>
+    <div >
       <Pie data={data}/>
     </div>
   )

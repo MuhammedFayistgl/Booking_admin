@@ -8,7 +8,7 @@ const Geographymap = () => {
 
   return (
     <>
-    <Typography sx={{m:2}}>
+    <Typography sx={{mt:2}}>
     Geography Based Traffic
     </Typography>
       <ComposableMap>

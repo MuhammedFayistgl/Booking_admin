@@ -9,10 +9,10 @@ import ImgUplode from "./imgUplode";
 
 const Uplodecomponent = () => {
     const [value, setValue] = useState('one');
-    console.log(value);
+    // console.log(value);
 
     const handleChange = (event, newValue) => {
-        console.log(event, newValue);
+     
       setValue(newValue);
     };
   

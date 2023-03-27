@@ -119,7 +119,7 @@ const Home = () => {
             </div>
             <div style={{display:'flex',justifyContent:'space-between',gap:3,marginTop:10}}>
             <Paper elevation="4">
-              <div style={{ width: 200, height: 200 }}>
+              <div style={{ width: 240, height: 300 }}>
                 <Piechart />
               </div>
             </Paper>
