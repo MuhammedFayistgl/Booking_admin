@@ -2,10 +2,10 @@ import toast from "react-hot-toast";
 import axios from "axios";
 /** Admin uploded data validation */
 
-export const validateAdminData = ({ inputdata }) => {
-  const { amount, category, discription, name, place, rating } = inputdata;
+export const validateAdminData = ({ inputdata },setInputdata,initialvalue,fechData,) => {
+  const { amount, category, discription, name, place, rating ,profilImg } = inputdata;
   // console.log(inputdata.constructor === Object);
-  console.log(inputdata);
+  console.log(inputdata,'..............................');
   try {
     if (category === undefined) {
       toast.error("category is required");
@@ -21,12 +21,38 @@ export const validateAdminData = ({ inputdata }) => {
       return toast.error(`pleas add your Amount  `);
     } else if (discription === "") {
       return toast.error(`pleas add your Discription `);
+    } else if (profilImg === "") {
+      return toast.error(`pleas add your Cover image`);
     } else {
+      
+    
       axios
-        .post("http://localhost:5000/admin/uplodehotelDeteals", inputdata)
-        .then(toast.success(`${category} Data uploaded successfully`));
+        .post("http://localhost:5000/admin//uplodehotelDeteals", inputdata )
+       
+        
+        .then(res => { // then print response status
+          console.warn(res);
+          if(res.data.success === 1){
+            setSuccess("Image upload successfully");
+            fechData()
+
+          }
+    
+        })
+      
     }
   } catch (error) {
-    toast.error(error);
+    toast.error(error); 
   }
 };
+
+export const convertBase64 = async (file) => {
+ return new Promise((resolve, reject) => {
+  const filereder = new FileReader()
+  filereder.readAsDataURL(file)
+  
+  filereder.onload = () => resolve(filereder.result)
+  filereder.onerror = (error) => reject(error)
+ })
+}
+

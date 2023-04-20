@@ -3,7 +3,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Information from '../components/Information'
-import ImgUplode from "./imgUplode";
+import ImgUplode from "../components/ImgUplode";
+import ExtraUplode from "../components/ExtraUplode";
+import ExtimagList from "../components/ExtimagList";
 
 
 
@@ -37,7 +39,7 @@ const Uplodecomponent = () => {
     <Box>
     {value=="one"&& <Information/>}
     {value==="two"&& <ImgUplode/>}
-    {value==="three"&& <ImgUplode/>}
+    {value==="three"&& <ExtimagList/>}
        
     </Box>
     </>
