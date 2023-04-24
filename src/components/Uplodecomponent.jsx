@@ -10,7 +10,7 @@ import ExtimagList from "../components/ExtimagList";
 
 
 const Uplodecomponent = () => {
-    const [value, setValue] = useState('one');
+    const [value, setValue] = useState(1);
     // console.log(value);
 
     const handleChange = (event, newValue) => {
@@ -30,16 +30,16 @@ const Uplodecomponent = () => {
         indicatorColor="secondary"
         aria-label="secondary tabs example"
       >
-        <Tab value="one" label="Item One" />
-        <Tab value="two" label="Item Two" />
-        <Tab value="three" label="Item Three" />
+        <Tab value= {1} label="Item One" />
+        <Tab value={2} label="Item Two" />
+        <Tab value={3} label="Item Three" />
       </Tabs>
 
     </Box>
     <Box>
-    {value=="one"&& <Information/>}
-    {value==="two"&& <ImgUplode/>}
-    {value==="three"&& <ExtimagList/>}
+    {value=== 1 && <Information/>}
+    {value=== 2 && <ImgUplode/>}
+    {value=== 3 && <ExtimagList/>}
        
     </Box>
     </>

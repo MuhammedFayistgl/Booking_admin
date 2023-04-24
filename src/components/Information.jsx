@@ -53,9 +53,10 @@ const information = () => {
   const [loding, setloding] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [delData, setdelData] = React.useState({});
+  const [imagePreview, setimagePreview] = React.useState([]);
 
 
-
+console.log(imagePreview);
   React.useEffect(() => {
     fechData();
   }, []);
@@ -100,7 +101,7 @@ const information = () => {
 
   function imagehandleChange(event) {
 
-    setFile({...file,preview:URL.createObjectURL(event.target.files[0]),profilImg:event.target.files[0]});
+    setimagePreview([{...imagePreview,preview:URL.createObjectURL(event.target.files[0])}]);
   }
  
  
@@ -200,22 +201,25 @@ const information = () => {
                 {/* <Stack>
                   <Avatar
                     alt="Semy Sharp"
-                    src={file.preview&&file.preview}
+                    src={imagePreview[0]?.preview&&imagePreview[0]?.preview}
                     sx={{ width: 50, height: 50, objectFit: "cover" }}
                   />
-                </Stack> */}
+                </Stack>
 
-                {/* <Button
+                <Button
+                   {...imagePreview?.length > 0 &&   {color:"warning"}  }
                   onChange={(e) => {
                     imagehandleChange(e)
                    
                   }}
+                  size="small"
                   aria-label="upload picture"
                   component="label"
                   variant="contained"
                   endIcon={<AddPhotoAlternateIcon />}
                 >
-                  Cover image
+                {...imagePreview?.length > 0 ? "Ready to uplode" :   "Select profile picture"}
+                
                   <input hidden accept="image/*" multiple type="file" name="file" />
                 </Button> */}
                 <LoadingButton
@@ -263,7 +267,7 @@ const information = () => {
                       {data.category}
                     </Typography>
                     <Stack sx={{ width: "15%", fontSize: 15, flexShrink: 0 }}>
-                    <img   style={{ width: 40, height: 40 }} width={"50%"} src={`http://localhost:5000/${data.profilImg}`} alt="img"  />
+                    <img   style={{ width: 40, height: 40 }} width={"50%"} src={data?.profilImg} alt="img"  />
                      
                      
                     </Stack>
