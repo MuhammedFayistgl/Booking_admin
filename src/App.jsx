@@ -6,11 +6,18 @@ import LinechartComponent from "./Pages/LinechartComponent";
 import Piepage from "./Pages/Piepage";
 import Team from "./Pages/Team";
 import Uplode from "./Pages/Uplode";
+import Manage from "./components/Manage";
+import Orderinfo from "./components/Orderinfo";
+import "rsuite/dist/rsuite-no-reset.min.css";
+
+
 
 function App() {
+
+
+
   return (
     <>
-  
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,6 +27,8 @@ function App() {
           <Route path="/Pie" element={<Piepage />} />
           <Route path="/Barchart" element={<BarChartPage />} />
           <Route path="/uplode" element={<Uplode />} />
+          <Route path="/manage" element={<Manage />} />
+          <Route path="/userorder" element={<Orderinfo />} />
         </Routes>
       </BrowserRouter>
     </>

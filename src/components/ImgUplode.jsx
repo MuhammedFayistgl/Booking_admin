@@ -20,7 +20,7 @@ import { DeleteimageHandler, EditimageHandler } from "../Helper/CredOparations";
 import ExtraUplode from "./ExtraUplode";
 import { useSelector } from "react-redux";
 import Proimgbutton from "./Proimgbutton";
-
+import TablePagination from '@mui/material/TablePagination';
 
 
 
@@ -75,9 +75,10 @@ const ImgUplode = () => {
     <div>
      <Toaster/> 
       {/* Teble */}
+      
      
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 300 ,maxHeight:100,overflow:'scroll' }} aria-label="simple table">
+      <TableContainer sx={{ borderCollapse: 'separate', tableLayout: 'fixed',maxHeight:500 ,maxWidth:1000,overflow:'scroll' }}  component={Paper}>
+        <Table size="small"   aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="left">PROFILE UPLODE</TableCell>
@@ -123,6 +124,7 @@ const ImgUplode = () => {
                </TableCell>
                 </TableRow>
               ))}
+              {/* <TablePagination/> */}
           </TableBody>
         </Table>
 

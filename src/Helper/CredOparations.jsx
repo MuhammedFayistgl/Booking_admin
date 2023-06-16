@@ -2,8 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 /** delete */
 export const HandleDelete = ({ _id }, setOpen, fechData) => {
-  setOpen(false);
-  console.log("deleOne", _id);
+ 
   if (_id) {
     axios
       .post("http://localhost:5000/admin/deleteoneDeteals", { _id })

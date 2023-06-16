@@ -24,6 +24,8 @@ import BarChartTwoToneIcon from '@mui/icons-material/BarChartTwoTone';
 import PieChartOutlineTwoToneIcon from '@mui/icons-material/PieChartOutlineTwoTone';
 import TimelineTwoToneIcon from '@mui/icons-material/TimelineTwoTone';
 import StackedLineChartTwoToneIcon from '@mui/icons-material/StackedLineChartTwoTone';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { Link } from "react-router-dom";
 
@@ -75,6 +77,10 @@ const Navigationbar = () => {
           </Typography>
           <MenuItem icon={<Person2TwoToneIcon/>} >Profile From</MenuItem> 
           <MenuItem component={<Link to={'/uplode'}/>} icon={<CloudUploadIcon/>} >Uplode</MenuItem> 
+          <SubMenu label={'Manage'}  icon={<ManageAccountsIcon/>}  >
+            <MenuItem component={<Link to={'/manage'}/>} icon={<BookmarkAddedIcon/>} >Order</MenuItem> 
+          </SubMenu>
+         
           <MenuItem icon={<CalendarTodayTwoToneIcon/>} >Calnder</MenuItem> 
           <MenuItem icon={<ContactSupportTwoToneIcon/>} >FAQ page</MenuItem> 
           <Typography
