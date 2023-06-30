@@ -8,6 +8,7 @@ import DiscriptionInput from "./DiscriptionInput";
 import ImgUplodeInput from "./ImgUplodeInput";
 import UplodeInputsBTN from "./UplodeInputsBTN";
 import { FormControl } from "@mui/material";
+import Profileimagebutton from "../Proimgbutton";
 
 const Allinputs = () => {
   return (
@@ -19,7 +20,8 @@ const Allinputs = () => {
         <RatingInput />
         <AmountInput />
         <DiscriptionInput />
-        <ImgUplodeInput />
+        {/* <ImgUplodeInput /> */}
+        {/* <Profileimagebutton/> */}
         <UplodeInputsBTN />
       </FormControl>
     </>

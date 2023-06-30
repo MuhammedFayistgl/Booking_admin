@@ -31,3 +31,12 @@ export const postDataHelper = createAsyncThunk(
 
 
 );
+
+export const userBookingGetadmin = createAsyncThunk(' userBookingGetadmin',
+  async () => {
+    const res = await axios.get('http://localhost:5000/admin/userBookingGetadmin')
+      .then((response) => { return response.data })
+      .catch((err) => console.log(err))
+    return res
+  }
+)

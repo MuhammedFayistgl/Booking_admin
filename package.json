@@ -23,6 +23,7 @@
     "compile-sass": "^2.0.0",
     "faker": "^6.6.6",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-circular-progressbar": "^2.1.0",
@@ -35,13 +36,16 @@
     "react-simple-maps": "^3.0.0",
     "rsuite": "^5.32.0",
     "styled-components": "^5.3.8",
-    "swiper": "^9.2.0"
+    "sweetalert2": "^11.7.12",
+    "swiper": "^9.2.0",
+    "vitest": "^0.32.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^5.1.6",
     "vite": "^4.1.0"
   }
 }

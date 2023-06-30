@@ -7,13 +7,13 @@ import AccodionSummary from './AccodionSummary';
 import { getDataHelper } from '../../redux/ExtraRduces/ThankHelpers';
 
 
+
 const AccodionTable = () => {
     const Dispatch = useDispatch()
     useEffect(() => {
         Dispatch(getDataHelper())
-
     }, []);
-    const trashRefresh = useSelector((state) =>  state.DeleteState.refechData)
+
 
 
     const data = useSelector((state) => state.DETAILS.data);
@@ -36,7 +36,8 @@ const AccodionTable = () => {
                             </Accordion>
                         </>
                     );
-                })}
+                })            
+                }
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {  Box, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -27,19 +27,19 @@ import TablePagination from '@mui/material/TablePagination';
 
 
 const ImgUplode = () => {
-/** STATE */
+  /** STATE */
   const [tableData, setTableData] = useState();
   const [open, setOpen] = React.useState(false);
   const [deletedData, setdeletedData] = React.useState({});
   const [editData, setEditData] = React.useState({});
   const [erorr, setErorr] = React.useState('');
-  const data = useSelector((data)=>  data.data.value)
+  const data = useSelector((state) => state.DETAILS.data);
 
 
   // console.log('tableDatan',tableData);
   React.useEffect(() => {
     !tableData &&
-    fechData();
+      fechData();
   }, []);
   const fechData = async () => {
     axios
@@ -51,34 +51,34 @@ const ImgUplode = () => {
         console.log(error);
       });
   };
- 
-  function handleChange(id,event) {
-   
+
+  function handleChange(id, event) {
+
   }
 
 
   const handleAction = () => {
     setOpen(false);
-  
-    if(editData){
+
+    if (editData) {
       console.log('you clicked the edit button');
-      setErorr(EditimageHandler(editData)) 
-    }else{
+      setErorr(EditimageHandler(editData))
+    } else {
       console.log('you clicked the delete button');
-      setErorr(DeleteimageHandler(deletedData)) 
+      setErorr(DeleteimageHandler(deletedData))
     }
-    
-     
+
+
   };
 
   return (
     <div>
-     <Toaster/> 
+      <Toaster />
       {/* Teble */}
-      
-     
-      <TableContainer sx={{ borderCollapse: 'separate', tableLayout: 'fixed',maxHeight:500 ,maxWidth:1000,overflow:'scroll' }}  component={Paper}>
-        <Table size="small"   aria-label="simple table">
+
+
+      <TableContainer sx={{ borderCollapse: 'separate', tableLayout: 'fixed', maxHeight: 500, maxWidth: 1000, overflow: 'scroll' }} component={Paper}>
+        <Table size="small" aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell align="left">PROFILE UPLODE</TableCell>
@@ -92,62 +92,62 @@ const ImgUplode = () => {
             {tableData &&
               tableData.map((row) => (
                 <TableRow
-               
+
                   key={row._id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell align="left" component="th" scope="row">
                     {row.name}
-                    
-                     {/*PROFILE IMAGE BUTTON COMPONENT */}
-                     <Proimgbutton fechData={fechData} id={row._id} />
-                     
-                  
+
+                    {/*PROFILE IMAGE BUTTON COMPONENT */}
+                    <Proimgbutton fechData={fechData} id={row._id} />
+
+
                   </TableCell>
                   <TableCell align="center" >
                     {row._id}
                   </TableCell>
                   <TableCell align="left" component="th" scope="row">
-                    <img  key={row._id} width={60} src={row?.profilImg}  alt="" srcset="" />
+                    <img key={row._id} width={60} src={row?.profilImg} alt="" srcset="" />
                     <Box>
-                          <EditIcon  onClick={()=>  {setOpen(true),setEditData({ id : row._id ,imgName :row.profilImg  }),setdeletedData('') } } color="success" /> 
-                          <DeleteIcon  onClick={()=>  {setOpen(true) ,setdeletedData( { id : row._id ,imgName :row.profilImg  }),setEditData('') } } color="error"/>
+                      <EditIcon onClick={() => { setOpen(true), setEditData({ id: row._id, imgName: row.profilImg }), setdeletedData('') }} color="success" />
+                      <DeleteIcon onClick={() => { setOpen(true), setdeletedData({ id: row._id, imgName: row.profilImg }), setEditData('') }} color="error" />
                     </Box>
                   </TableCell>
-                 <TableCell>
-                 {/* EXTRA IMAGE UPLODE COMPONENT */}
-                <ExtraUplode fechData={fechData} id={row._id} />
-                 </TableCell>
-                 {/* IMAGE COUNT */}
-               <TableCell>
-                {row?.extraImages.length}
-               </TableCell>
+                  <TableCell>
+                    {/* EXTRA IMAGE UPLODE COMPONENT */}
+                    <ExtraUplode fechData={fechData} id={row._id} />
+                  </TableCell>
+                  {/* IMAGE COUNT */}
+                  <TableCell>
+                    {row?.extraImages.length}
+                  </TableCell>
                 </TableRow>
               ))}
-              {/* <TablePagination/> */}
+            {/* <TablePagination/> */}
           </TableBody>
         </Table>
 
         {/* alert messeage box  */}
         <Dialog
-        open={open}
-        onClose={()=> setOpen(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"are you sure ?"}
-        </DialogTitle>
-     
-        <DialogActions>
-          <Button onClick={()=> setOpen(false)}>Disagree</Button>
-          <Button onClick={handleAction} autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"are you sure ?"}
+          </DialogTitle>
+
+          <DialogActions>
+            <Button onClick={() => setOpen(false)}>Disagree</Button>
+            <Button onClick={handleAction} autoFocus>
+              Agree
+            </Button>
+          </DialogActions>
+        </Dialog>
       </TableContainer>
-     
+
     </div>
   );
 };

@@ -24,15 +24,15 @@ const rows = [
 ];
 
 export default function ExtimagList() {
- const data = useSelector((data)=>  data.data.value)
+  const data = useSelector((state) => state.DETAILS.data);
  const dispath = useDispatch();
 
 
- useEffect(() => {
-    dispath( datasAsync()) 
-    !data &&  
-   dispath(datasAsync());
- }, []);
+//  useEffect(() => {
+//     dispath( datasAsync()) 
+//     !data &&  
+//    dispath(datasAsync());
+//  }, []);
 
  console.log(data)
   return (

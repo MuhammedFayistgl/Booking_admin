@@ -17,7 +17,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
 // =======rsuite ========
-import {  Tag } from 'rsuite';
+import { Tag } from 'rsuite';
 
 
 const sortIcon = <ArrowDownwardIcon />;
@@ -73,6 +73,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
     {
       id: 2,
@@ -84,6 +85,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
     {
       id: 3,
@@ -95,6 +97,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: "On Hold"
     },
     {
       id: 4,
@@ -106,6 +109,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: "Pending"
     },
     {
       id: 5,
@@ -117,6 +121,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
     {
       id: 6,
@@ -128,6 +133,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
 
     {
@@ -140,6 +146,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
     {
       id: 8,
@@ -151,6 +158,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
 
     {
@@ -163,6 +171,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
     {
       id: 10,
@@ -174,6 +183,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Processing',
     },
 
     {
@@ -186,6 +196,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
     {
       id: 12,
@@ -197,6 +208,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
     {
       id: 13,
@@ -208,6 +220,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
     {
       id: 14,
@@ -219,6 +232,7 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
 
     {
@@ -231,18 +245,19 @@ const Manage = () => {
       checkin: new Date().toLocaleDateString(),
       checkout: new Date().toLocaleDateString(),
       payment: "5222",
+      paymentstatus: 'Completed'
     },
   ];
   const navigate = useNavigate();
   const [page, setPage] = React.useState(0);
-const [rowsPerPage, setRowsPerPage] = React.useState(5);
-const handleChangePage = (event, newPage) => {
-  setPage(newPage);
-};
-const handleChangeRowsPerPage = (event) => {
-  setRowsPerPage(parseInt(event.target.value, 10));
-  setPage(0);
-};
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
   return (
     <>
       {/* BASIC TEMPLATE */}
@@ -258,7 +273,7 @@ const handleChangeRowsPerPage = (event) => {
           <Navigationmenu />
           <div style={{ width: 1060, height: 500 }}>
             <Box sx={{ margin: 2 }}>
-              {/* <Paper elevation={2}>
+              <Paper elevation={2}>
                 <DataTable
                   columns={columns}
                   data={data}
@@ -278,8 +293,8 @@ const handleChangeRowsPerPage = (event) => {
                   responsive
                   onclick={infoHandler}
                 />
-              </Paper> */}
-              <TableContainer
+              </Paper>
+              {/* <TableContainer
                 component={Paper}
                 
                 sx={{
@@ -343,11 +358,11 @@ const handleChangeRowsPerPage = (event) => {
               }}
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
-            />
+            /> */}
             </Box>
-            
+
           </div>
-         
+
         </div>
       </div>
     </>

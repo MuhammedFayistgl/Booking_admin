@@ -31,7 +31,7 @@ const UplodeSlice = createSlice({
     [postDataHelper.pending]: (state, action) => {
       state.UplodButton.loading = true;
       console.log("pending Paylod", action);
-      toast.loading('please wait...');
+      // toast.loading('please wait...');
     },
     [postDataHelper.rejected]: (state, action) => {
       state.UplodButton.loading = false;
@@ -42,6 +42,7 @@ const UplodeSlice = createSlice({
       state.UplodButton.loading = false;
       console.log("fulfilled Paylod............", action);
       toast.success(action.payload.massage)
+      
     },
   },
 });

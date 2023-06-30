@@ -15,6 +15,8 @@ const CatagoryInput = () => {
         <MenuItem value={"Hotels"}>Hotels</MenuItem>
         <MenuItem value={"Appartments"}>Appartments</MenuItem>
         <MenuItem value={"Resorts"}>Resorts</MenuItem>
+        <MenuItem value={"Villas"}>Villas</MenuItem>
+        <MenuItem value={"Cabins"}>Cabins</MenuItem>
       </Select>
     </>
   );

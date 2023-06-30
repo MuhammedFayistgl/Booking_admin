@@ -16,6 +16,7 @@ import { setReset } from "../redux/Slices/UplodeSlice";
 
 const information = () => {
   const All_Inputs_State = useSelector((s) => s.UplodeData.inputs);
+  const data = useSelector((state) => state.DETAILS.dataa);
 
   const Dispatch = useDispatch()
 

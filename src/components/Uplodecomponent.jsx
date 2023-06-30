@@ -11,7 +11,7 @@ import ExtimagList from "../components/ExtimagList";
 
 const Uplodecomponent = () => {
     const [value, setValue] = useState(1);
-    // console.log(value);
+     console.log(value);
 
     const handleChange = (event, newValue) => {
      

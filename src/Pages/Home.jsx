@@ -14,6 +14,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import Button from "@mui/material/Button";
 import Geographymap from "../components/Geographymap";
+import TransationsComponent from "../components/Recent/TransationsComponent";
 
 const Home = () => {
   return (
@@ -55,65 +56,8 @@ const Home = () => {
                     "& ul": { padding: 0 },
                   }}
                 >
-                  <Paper square sx={{ p: 1 }}>
-                    <Typography>Recent Transations</Typography>
-                  </Paper>
-                  <Paper>
-                    <ListItem
-                      sx={{ display: "flex", flexDirection: "row", gap: 2 }}
-                    >
-                      <ListItemText sx={{ display: "flex" }}>
-                        <Typography  style={{fontSize:12}}  variant="subtitle2">id.. </Typography>
-                        <Typography  style={{fontSize:10}} variant="subtitle1"> Name</Typography>
-                      </ListItemText>
-                      <Typography  style={{fontSize:12}}>20-5-2023</Typography>
-                      <Button size="small" variant="contained" color="success">
-                        $5235
-                      </Button>
-                    </ListItem>
-                  </Paper>
-                  <Paper>
-                    <ListItem
-                      sx={{ display: "flex", flexDirection: "row", gap: 2 }}
-                    >
-                      <ListItemText sx={{ display: "flex" }}>
-                        <Typography  style={{fontSize:12}} variant="subtitle2">id.. </Typography>
-                        <Typography  style={{fontSize:10}} variant="subtitle1"> Name</Typography>
-                      </ListItemText>
-                      <Typography  style={{fontSize:12}}>20-5-2023</Typography>
-                      <Button size="small" variant="contained" color="success">
-                        $5235
-                      </Button>
-                    </ListItem>
-                  </Paper>
-                  <Paper>
-                    <ListItem
-                      sx={{ display: "flex", flexDirection: "row", gap: 2 }}
-                    >
-                      <ListItemText sx={{ display: "flex" }}>
-                        <Typography  style={{fontSize:12}} variant="subtitle2">id.. </Typography>
-                        <Typography   style={{fontSize:10}}variant="subtitle1"> Name</Typography>
-                      </ListItemText>
-                      <Typography  style={{fontSize:12}}>20-5-2023</Typography>
-                      <Button size="small" variant="contained" color="success">
-                        $5235
-                      </Button>
-                    </ListItem>
-                  </Paper>
-                  <Paper>
-                    <ListItem
-                      sx={{ display: "flex", flexDirection: "row", gap: 2 }}
-                    >
-                      <ListItemText sx={{ display: "flex" }}>
-                        <Typography  style={{fontSize:12}} variant="subtitle2">id.. </Typography>
-                        <Typography  style={{fontSize:10}} variant="subtitle1"> Name</Typography>
-                      </ListItemText>
-                      <Typography  style={{fontSize:12}} >20-5-2023</Typography>
-                      <Button size="small" variant="contained" color="success">
-                        $5235
-                      </Button>
-                    </ListItem>
-                  </Paper>
+                  {/* Resent TransationsComponent */}
+                 <TransationsComponent/>
                 </List>
               </Box>
             </div>
