@@ -1,7 +1,7 @@
 import React from "react";
-import Linechart from "../components/Linechart";
 import Navigationbar from "../components/Navigationbar";
 import Navigationmenu from "../components/Navigationmenu";
+import Linechart from "../components/LinCart/Linechart";
 
 const LinechartComponent = () => {
   return (
@@ -15,7 +15,7 @@ const LinechartComponent = () => {
         }}
       >
         <Navigationmenu />
-      <div style={{width:1060,height:500}}>
+      <div style={{width:700}}>
           <Linechart />
       </div>
         

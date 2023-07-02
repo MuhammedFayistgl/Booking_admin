@@ -1,17 +1,12 @@
 import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import DarkModeSharpIcon from "@mui/icons-material/DarkModeSharp";
 import NotificationsSharpIcon from "@mui/icons-material/NotificationsSharp";
-import SettingsIcon from "@mui/icons-material/Settings";
-import Person2Icon from "@mui/icons-material/Person2";
 import React from "react";
+import MenuComponent from "./AccontMenu/MenuComponent";
 
 const Navigationmenu = () => {
   const Search = styled("div")(({ theme }) => ({
@@ -74,21 +69,19 @@ const Navigationmenu = () => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-             
               placeholder="Search…"
               inputProps={{ "aria-label": "search", }}
               
             />
           </Search>
           {/* icones */}
-          <Box display="flex" flexDirection="row" sx={{ mr: 3 }}>
+          <Box display="flex" flexDirection="row" sx={{ mr: 2,alignItems:'center' }}>
             <DarkModeSharpIcon />
             <NotificationsSharpIcon />
-            <SettingsIcon />
-            <Person2Icon />
+            <MenuComponent />
           </Box>
         </Box>
-        <Box sx={{ ml: 2, mt: 1 }}>
+        <Box sx={{ ml: 1, mt: 1 }}>
           <Typography variant="h6">DASHBOARD</Typography>
           <Typography  variant="subtitle1">welcome to your dashboard</Typography>
         </Box>

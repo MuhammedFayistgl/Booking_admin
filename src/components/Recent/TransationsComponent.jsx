@@ -26,8 +26,8 @@ const TransationsComponent = () => {
       {state &&
         state.map((state) => {
           return (
-            <Paper>
-              <ListItem sx={{ display: "flex", flexDirection: "row", gap: 2 }}>
+          
+              <ListItem sx={{ display: "flex", flexDirection: "row", gap: 2,backgroundColor:'cornsilk',mt:0.1 }}>
                 <ListItemText sx={{ display: "flex", flexDirection: "column" }}>
                   <RecentAvathar userID={state.userID} name={state.FullName} />
                   <RecentName name={state.FullName} />
@@ -36,7 +36,7 @@ const TransationsComponent = () => {
                 <RecentTime name={state.FullName} time={state.Time} />
                 <RecentTag />
               </ListItem>
-            </Paper>
+            
           );
         })}
     </>

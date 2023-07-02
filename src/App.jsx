@@ -9,6 +9,9 @@ import Uplode from "./Pages/Uplode";
 import Manage from "./components/Manage";
 import Orderinfo from "./components/Orderinfo";
 import "rsuite/dist/rsuite-no-reset.min.css";
+import LoginComponent from "./components/auth/Login/LoginComponent";
+import SingComponent from "./components/auth/Registration/SignComponent";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -19,7 +22,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
+     <Toaster/>
         <Routes>
+       
+          <Route path="/login" element={<LoginComponent />} />
+          <Route path="/singup" element={<SingComponent />} />
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
           <Route path="/linechart" element={<LinechartComponent />} />

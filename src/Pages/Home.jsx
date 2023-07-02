@@ -1,20 +1,14 @@
 import React from "react";
-import Linechart from "../components/Linechart";
-import Livestatus from "../components/Livestatus";
 import Navigationbar from "../components/Navigationbar";
 import Navigationmenu from "../components/Navigationmenu";
-import { Box } from "@mui/material";
-import Piechart from "../components/Piechart";
-import Barchart from "../components/Barchart";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
-import Button from "@mui/material/Button";
-import Geographymap from "../components/Geographymap";
-import TransationsComponent from "../components/Recent/TransationsComponent";
+import {  Container, Grid } from "@mui/material";
+import LivestatusComponent from "../components/LiveStatus/Frame/LivestatusComponent";
+import BarChart from "../components/BarChart/BarChart";
+import Piechart from "../components/PieChart/Piechart";
+import Linechart from "../components/LinCart/Linechart";
+import RecentTransactionBody from "../components/Recent/RecentTransactionBody";
+
+
 
 const Home = () => {
   return (
@@ -26,61 +20,20 @@ const Home = () => {
             display: "flex",
             flexDirection: "column",
             width: " -webkit-fill-available",
+            overflow: "auto",
           }}
         >
-          <Navigationmenu />
-          <Livestatus />
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Paper elevation="4">
-                <Box>
-                  <div style={{ width: 690, height: 345, padding: 5 }}>
-                    <Barchart />
-                  </div>
-                </Box>
-              </Paper>
+          <Container>
+            <Navigationmenu />
+            <LivestatusComponent />
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <BarChart />
+              <Piechart />
+              <Linechart />
+               <RecentTransactionBody />
+            </Grid>
 
-              <Box>
-                <List
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 1,
-                    width: "100%",
-                    maxWidth: 360,
-                    minWidth: 350,
-                    bgcolor: "background.paper",
-                    position: "relative",
-                    overflow: "auto",
-                    maxHeight: 340,
-                    "& ul": { padding: 0 },
-                  }}
-                >
-                  {/* Resent TransationsComponent */}
-                 <TransationsComponent/>
-                </List>
-              </Box>
-            </div>
-            <div style={{display:'flex',justifyContent:'space-between',gap:3,marginTop:10}}>
-            <Paper elevation="4">
-              <div style={{ width: 240, height: 300 }}>
-                <Piechart />
-              </div>
-            </Paper>
-
-            <Paper elevation="4">
-              <div style={{ width: 500 }}>
-                <Linechart />
-              </div>
-            </Paper>
-            <Paper>
-              <div style={{ width: 350, height: 300 }}>
-                <Geographymap />
-              </div>
-            </Paper>
-          </div>
-          </div>
-    
+          </Container>
         </div>
       </div>
     </>

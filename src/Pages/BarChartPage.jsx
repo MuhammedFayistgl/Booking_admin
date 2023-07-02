@@ -1,7 +1,7 @@
 import React from 'react'
-import Barchart from '../components/Barchart'
 import Navigationbar from '../components/Navigationbar'
 import Navigationmenu from '../components/Navigationmenu'
+import BarChart from '../components/BarChart/BarChart'
 
 const BarChartPage = () => {
   return (
@@ -16,8 +16,8 @@ const BarChartPage = () => {
         }}
       >
         <Navigationmenu />
-      <div style={{width:1060,height:500}}>
-       <Barchart/>
+      <div style={{width:700}}>
+       <BarChart/>
       </div>
         
        

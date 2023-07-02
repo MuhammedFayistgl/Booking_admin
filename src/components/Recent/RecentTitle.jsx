@@ -5,8 +5,8 @@ const RecentTitle = () => {
   return (
     <>
   
-      <Paper square sx={{ p: 1 }}>
-        <Typography>Recent Transations</Typography>
+      <Paper square sx={{  backgroundColor:'lightblue' }}>
+        <Typography sx={{p:1}}>Recent Transations</Typography>
       </Paper>
     </>
   );
