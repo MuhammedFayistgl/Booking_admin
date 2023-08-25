@@ -5,15 +5,15 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import LoginHeader from "./LoginHeader";
 import LoginAdminForm from "./LoginAdminForm";
-import LoginCopy from './LoginCopy'
+import LoginCopy from "./LoginCopy";
+import { useNavigate } from "react-router-dom";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
 const LoginComponent = () => {
-
-
+	
 	return (
 		<>
 			<ThemeProvider theme={defaultTheme}>
@@ -28,7 +28,7 @@ const LoginComponent = () => {
 						}}
 					>
 						<LoginHeader />
-						<LoginAdminForm/>
+						<LoginAdminForm />
 					</Box>
 					<LoginCopy />
 				</Container>

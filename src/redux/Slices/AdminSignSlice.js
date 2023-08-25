@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import validator from "email-validator";
 import { SignUphandleSubmit } from "../ExtraRduces/RegisterThank";
+
+import swal from "sweetalert2";
+
 const state = {
     input: {
         username: '',
@@ -49,8 +52,15 @@ const SignUpAdmin = createSlice({
 
     },
     extraReducers: {
-        [SignUphandleSubmit.fulfilled]: () => {
-
+        [SignUphandleSubmit.fulfilled]: (state, action) => {
+            state.register = action.payload
+            if (state.register.status) {
+                state.register.Signup = true
+                new swal("Confirmed!", action.payload.message, "success");
+            }
+            else {
+                state.register.Signup = false
+            }
         }
     },
 });

@@ -6,49 +6,32 @@ import LoginRemember from "./LoginRemember";
 import LoginBTN from "./LoginBTN";
 import LoginFooter from "./LoginFooter";
 import LoginEmail from "./LoginEmail";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+import { LoginhandleSubmit } from "../../../redux/ExtraRduces/LoginThank";
 
 const LoginAdminForm = () => {
-	// const handleSubmit = (event) => {
-	// 	event.preventDefault();
-	// 	const data = new FormData(event.currentTarget);
-	// 	console.log({
-	// 		email: data.get("email"),
-	// 		password: data.get("password"),
-	// 	});
-	// };
-	const [formValues, setFormValues] = useState();
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setFormValues({
-			...formValues,
-			[name]: {
-				...formValues[name],
-				value,
-			},
-		});
-	};
+	const Dispatch = useDispatch();
+	const FormData = useSelector((state) => state.adminLogin); 
+
+	
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		const formFields = Object.keys(formValues);
-		let newFormValues = { ...formValues };
-
-		for (let index = 0; index < formFields.length; index++) {
-			const currentField = formFields[index];
-			const currentValue = formValues[currentField].value;
-
-			if (currentValue === "") {
-				newFormValues = {
-					...newFormValues,
-					[currentField]: {
-						...newFormValues[currentField],
-						error: true,
-					},
-				};
-			}
+		
+		if (FormData?.error?.email || FormData.input.email == "") {
+			toast.error("Please enter a valid email");
 		}
+		else if (FormData?.error?.password || FormData.input.password == "") {
+			toast.error("Please enter a valid password");
+		} else {
+			const NewData = FormData.input;
 
-		setFormValues(newFormValues);
+			Dispatch(LoginhandleSubmit(NewData));
+		}
+		
+		
+
+		
 	};
 	return (
 		<>

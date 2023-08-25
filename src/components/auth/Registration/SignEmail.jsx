@@ -2,9 +2,14 @@ import { TextField } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setEmail } from "../../../redux/Slices/AdminSignSlice";
+import { useNavigate } from "react-router-dom";
 
 const SignEmail = () => {
+	const Navigate = useNavigate()
 	const FormData = useSelector((state) => state.adminSignup); //username email  password
+	if(FormData?.register?.status){
+		Navigate('/')
+	}
 	const Dispatch = useDispatch();
 	return (
 		<>

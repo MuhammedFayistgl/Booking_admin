@@ -16,20 +16,21 @@ const SignAdminForm = () => {
 
 	const Dispatch = useDispatch();
 	const SumitHandler = (e) => {
+		e.preventDefault();
 		if (FormData?.error?.username || FormData.input.username == "") {
 			toast.error("username not allowed special characters or invalid username");
 		}
-		if (FormData?.error?.email || FormData.input.email == "") {
+		else if (FormData?.error?.email || FormData.input.email == "") {
 			toast.error("Please enter a valid email");
 		}
-		if (FormData?.error?.password || FormData.input.password == "") {
+		else if (FormData?.error?.password || FormData.input.password == "") {
 			toast.error("Please enter a valid password");
 		} else {
 			const NewData = FormData.input;
 
 			Dispatch(SignUphandleSubmit(NewData));
 		}
-		e.preventDefault();
+		
 	};
 	return (
 		<>

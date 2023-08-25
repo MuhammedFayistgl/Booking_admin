@@ -1,13 +1,14 @@
 import { FormControl, InputLabel, OutlinedInput, TextField } from "@mui/material";
 import React from "react";
-import { useDispatch } from "react-redux";
-import {  loginhandleSubmit } from "../../../redux/Slices/AdminloginSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setloginPasswerd } from "../../../redux/Slices/AdminloginSlice";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const LoginPassword = () => {
+	const FormData = useSelector((state) => state.adminLogin); // email  password
 	const Dispatch = useDispatch();
 	const [showPassword, setShowPassword] = React.useState(false);
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -18,7 +19,7 @@ const LoginPassword = () => {
 				<OutlinedInput
 					onChange={(e) =>
 						Dispatch(
-							loginhandleSubmit({
+							setloginPasswerd({
 								name: e.target.name,
 								value: e.target.value,
 							})
@@ -29,6 +30,7 @@ const LoginPassword = () => {
 					label="Password"
 					margin="normal"
 					required
+					error={FormData?.error?.password}
 					name="password"
 					autoComplete="current-password"
 					endAdornment={

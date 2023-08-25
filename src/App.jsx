@@ -12,34 +12,31 @@ import "rsuite/dist/rsuite-no-reset.min.css";
 import LoginComponent from "./components/auth/Login/LoginComponent";
 import SingComponent from "./components/auth/Registration/SignComponent";
 import { Toaster } from "react-hot-toast";
-
+import axios from "axios";
 
 
 function App() {
-
-
-
-  return (
-    <>
-      <BrowserRouter>
-     <Toaster/>
-        <Routes>
-       
-          <Route path="/login" element={<LoginComponent />} />
-          <Route path="/singup" element={<SingComponent />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/linechart" element={<LinechartComponent />} />
-          <Route path="/geography" element={<GeographymapPage />} />
-          <Route path="/Pie" element={<Piepage />} />
-          <Route path="/Barchart" element={<BarChartPage />} />
-          <Route path="/uplode" element={<Uplode />} />
-          <Route path="/manage" element={<Manage />} />
-          <Route path="/userorder" element={<Orderinfo />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+	axios.defaults.withCredentials = true;
+	return (
+		<>
+			<BrowserRouter>
+				<Toaster />
+				<Routes >
+					<Route path="/login" element={<LoginComponent />} />
+					<Route path="/singup" element={<SingComponent />} />
+					<Route path="/" element={<Home />} />
+					<Route path="/team" element={<Team />} />
+					<Route path="/linechart" element={<LinechartComponent />} />
+					<Route path="/geography" element={<GeographymapPage />} />
+					<Route path="/Pie" element={<Piepage />} />
+					<Route path="/Barchart" element={<BarChartPage />} />
+					<Route path="/uplode" element={<Uplode />} />
+					<Route path="/manage" element={<Manage />} />
+					<Route path="/userorder" element={<Orderinfo />} />
+				</Routes>
+			</BrowserRouter>
+		</>
+	);
 }
 
 export default App;
